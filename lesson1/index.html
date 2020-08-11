@@ -1,0 +1,34 @@
+<head>
+
+</head>
+
+<body>
+    <div id="index">
+        <p>{{msg}}</p>
+        <input v-model="info">
+        <button @click="addItem">add</button>
+        <li v-for="item in list">{{item}}</li>
+    </div>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+var vue = new Vue({
+    el:"#index",
+    data() {
+        return {
+            msg : "this is vue index",
+            info : "",
+            list : [],
+        }
+    },
+    methods: {
+        addItem() {
+            this.list.push(this.info)
+            this.info = ""
+        }
+    }
+})
+
+</script>
